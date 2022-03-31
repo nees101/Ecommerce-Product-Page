@@ -37,7 +37,7 @@ Users should be able to:
 
 #### Lightbox design
 
-![](./FinalDesignScreenshots/Lighbox_design.png)
+![](./FinalDesignScreenshots/Lightbox_design.png)
 
 #### Mobile Design
 
@@ -45,7 +45,7 @@ Users should be able to:
 
 #### Cart Design
 
-![](./FinalDesignScreenshots/Cart-filled.png)
+![](./FinalDesignScreenshots/Cart_filled.png)
 
 #### Mobile Menu
 
