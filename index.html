@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Title -->
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <!-- CSS stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <header>
+    <!-- Navbar Section-->
+
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <!-- Container wrapper -->
+      <div class="container-fluid">
+
+        <!-- Toggle button -->
+        <button type="button" class="navbar-toggler" data-bs-toggle="modal" data-bs-target="#overlay" aria-expanded="false" aria-label="Toggle navigation">
+          <img class="hamburger-icon " src="images/icon-menu.svg" alt="hamburger-icon">
+        </button>
+        <!-- Navbar brand -->
+        <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <img class="logo" src="images/logo.svg" height="15" alt="Logo" />
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Collections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+         <!-- Modal window for Mobile menu -->
+        <div class="modal left fade" id="overlay" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header border-0">
+                <a href="#" class="close" data-bs-dismiss="modal" aria-label="Close"><img class="close-icon" src="images/icon-close.svg" alt="close button" /></a>
+              </div>
+              <div class="modal-body">
+                <a href="#" class="nav-item nav-link " aria-expanded="false">Collections</a>
+                <a href="#" class="nav-item nav-link " aria-expanded="false">Men</a>
+                <a href="#" class="nav-item nav-link " aria-expanded="false">Women</a>
+                <a href="#" class="nav-item nav-link " aria-expanded="false">About</a>
+                <a href="#" class="nav-item nav-link " aria-expanded="false">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-right right-elements">
+          <!--  Cart Icon -->
+          <a class="right-link me-3" href="#" onclick="cart()">
+            <img class="cart1 pt-3 w-100" src="images/icon-cart.svg" alt="Shopping Cart" />
+          </a>
+          <p class="item-quantity"></p>
+
+          <!-- Cart Body -->
+
+          <div class="card " style="width: 20rem; height:15rem">
+            <div class="card-header mt-2">
+              Cart
+            </div>
+            <div class="card-body">
+              <p class="card-text text-center mt-5">Your cart is empty. </p>
+              <table class="items">
+                <tr>
+                  <td>
+                    <img class="product-1 rounded " src="images/image-product-1-thumbnail.jpg" alt="product image">
+                  </td>
+                  <td ps-5>
+                    <p class=" item-name">
+                      Fall Limited Edition Sneakers
+                    </p>
+                    <p class="total"> </p>
+                  </td>
+                  <td>
+                    <img class="delete" src="images/icon-delete.svg" alt="delete icon" onclick="deleteItem()">
+                  </td>
+                </tr>
+              </table>
+
+              <a href="#" class="btn btn-primary checkout">Checkout</a>
+            </div>
+          </div>
+
+
+          <!-- Avatar -->
+
+          <a class="right-link" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+            <img class="avatar w-100 rounded-circle" src="images/image-avatar.png" height="50" alt="Portrait of a Man" />
+          </a>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+  <hr />
+
+  <main>
+
+    <!-- Product Images and Description Section  -->
+
+    <div class="row row1 ">
+      <div class="col column1">
+        <img class="product" src="images/image-product-1.jpg" alt="product image" data-bs-toggle="modal" data-bs-target="#product-overlay">
+
+        <div class="thumbnails py-4">
+          <img class="thumbnail-1 me-3 highlight-enable" src="images/image-product-1-thumbnail.jpg" alt="product-1">
+          <img class="thumbnail-2 me-3 " src="images/image-product-2-thumbnail.jpg" alt="product-2">
+          <img class="thumbnail-3 me-3 " src="images/image-product-3-thumbnail.jpg" alt="product-3">
+          <img class="thumbnail-4 me-3 " src="images/image-product-4-thumbnail.jpg" alt="product-4">
+        </div>
+      </div>
+
+      <div class="column1-mobile">
+        <img class=" product prod-lightbox" src="images/image-product-1.jpg" alt="product images" />
+        <a href="#" class="prev " onclick="prev()"><img class="prev-icon" src="images/icon-previous.svg" alt="previous icon" /></a>
+        <a href="#" class="next" onclick="next()"><img class="next-icon" src="images/icon-next.svg" alt="next icon" /></a>
+        <div class="thumbnails py-4 ms-4">
+          <img class="thumbnail-1 thumb-lightbox-1 me-3 highlight-enable" src="images/image-product-1-thumbnail.jpg" alt="product-1">
+          <img class="thumbnail-2 thumb-lightbox-2 me-3 " src="images/image-product-2-thumbnail.jpg" alt="product-2">
+          <img class="thumbnail-3 thumb-lightbox-3 me-3" src="images/image-product-3-thumbnail.jpg" alt="product-3">
+          <img class="thumbnail-4 thumb-lightbox-4 me-3" src="images/image-product-4-thumbnail.jpg" alt="product-4">
+        </div>
+      </div>
+
+      <!-- Lightbox Modal Window-->
+      <div class="modal fade" id="product-overlay" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <a href="#" class=" close" data-bs-dismiss="modal" aria-label="Close"><img class="close-icon" src="images/icon-close.svg" alt="close button" /></a>
+            </div>
+            <div class="modal-body">
+              <div class="lightbox">
+                <img class=" product prod-lightbox" src="images/image-product-1.jpg" alt="product images" />
+                <a href="#" class="prev " onclick="prev()"><img class="prev-icon" src="images/icon-previous.svg" alt="previous icon" /></a>
+                <a href="#" class="next" onclick="next()"><img class="next-icon" src="images/icon-next.svg" alt="next icon" /></a>
+                <div class="thumbnails py-4 ms-4">
+                  <img class="thumbnail-1 thumb-lightbox-1 me-3 highlight-enable" src="images/image-product-1-thumbnail.jpg" alt="product-1">
+                  <img class="thumbnail-2 thumb-lightbox-2 me-3 " src="images/image-product-2-thumbnail.jpg" alt="product-2">
+                  <img class="thumbnail-3 thumb-lightbox-3 me-3" src="images/image-product-3-thumbnail.jpg" alt="product-3">
+                  <img class="thumbnail-4 thumb-lightbox-4 me-3" src="images/image-product-4-thumbnail.jpg" alt="product-4">
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col column2 pt-5 pe-5">
+        <p class="company-name">
+          SNEAKER COMPANY
+        </p>
+
+        <h1>Fall Limited Edition Sneakers</h1>
+
+        <p class="description pt-4 pb-2">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <p class="price d-inline">
+          $125.00
+        </p>
+        <p class="discount d-inline ms-2 px-2 py-1">
+          50%
+        </p>
+        <p class="original-price">
+          $250.00
+        </p>
+        <div class="row">
+          <div class="col-4  quantity">
+            <div class="row">
+              <div class="col text-center">
+                <img class="minus mt-4 ms-2 " src="images/icon-minus.svg" alt="minus icon" onclick="minus()" />
+              </div>
+              <div class="col">
+                <p class="number text-center mt-3">0</p>
+              </div>
+              <div class="col text-center">
+                <img class="plus mt-4 ms-2" src="images/icon-plus.svg" alt="plus icon" onclick="plus()" />
+              </div>
+            </div>
+
+          </div>
+          <div class="col-8 add-to-cart-btn">
+            <button type="button" class="btn btn-light btn-lg add-to-cart ms-2 " onclick="addToCart()"><img class="cart2" src="images/icon-cart.svg" alt="Shopping Cart" /> Add to cart</button>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io/" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/nees101">Neethu S. Nair</a>.
+    </div>
+  </footer>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
