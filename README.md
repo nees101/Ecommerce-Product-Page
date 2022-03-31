@@ -54,8 +54,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [@nees101/FrontendMentor](https://your-solution-url.com)
-- Live Site URL: [@nees101/Github](https://your-live-site-url.com)
+- Solution URL: [@nees101/FrontendMentor](https://www.frontendmentor.io/solutions/ecommerce-product-page-using-css-bootstrap-and-jquery-BJkTv_MQ9)
+- Live Site URL: [@nees101/Github](https://nees101.github.io/Ecommerce-Product-Page/)
 
 ## My process
 
